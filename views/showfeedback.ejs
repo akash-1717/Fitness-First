@@ -1,22 +1,23 @@
 <%- include("partials/header"); -%>
 
 <div class="container">
- <% results.forEach(function(entry) { %>
-  <div class="feedback-container"> 
-    <div class="user-name row">
-      <div class="col-sm-2" style="width: 3%; padding-top: 7px;">
-        <i class="fa-solid fa-user fa-xl"></i>
-      </div> 
-      <div class="col">
-        <h4><%=entry.name%> </h4>
-        <p> <%=entry.email%></p>
+  <% for (var i = 0; i < results.length; i++) { %>
+    <div class="feedback-container"> 
+      <div class="user-name row">
+        <div class="col-sm-2" style="width: 3%; padding-top: 7px;">
+          <i class="fa-solid fa-user fa-xl"></i>
+        </div> 
+        <div class="col">
+          <h4><%= results[i].name %> </h4>
+          <p> <%= results[i].email %></p>
+        </div>
       </div>
+      <div class="user-feedback"> 
+        <p><%= results[i].message %></p>
+      </div> 
     </div>
-    <div class="user-feedback"> 
-      <p><%=entry.message%></p>
-    </div> 
-  </div>
- <% }); %>
+  <% } %>
+  
 
 </div>
 
